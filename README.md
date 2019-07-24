@@ -1,7 +1,7 @@
 # AbstractAdpterRecyclerView
 
 
-```
+```groovy
 allprojects {
 		repositories {
 			...
@@ -10,7 +10,7 @@ allprojects {
 	}
   ```
  
- ```
+ ```groovy
   dependencies {
 	        implementation 'com.github.Pallavsaikia:AbstractAdpterRecyclerView:v1.0.0'
 	}
@@ -21,18 +21,18 @@ allprojects {
   
   1. Extend the AbstractAdapterRecycleViewInterface interface in the class to use it
   
-   ```
+   ```kotlin
   class MainActivity : AppCompatActivity() , AbstractAdapterRecycleViewInterface { }
    ```
    
   2.Initialize recyclerview
-  ```
+  ```kotlin
   val layoutManagerV = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
         recyclerView.layoutManager = layoutManagerV
         recyclerView.setHasFixedSize(true)
   ```
   3.Initialize adapter with AbstractAdapterRecycleView with your data and layout of your choice
-  ```
+  ```kotlin
   //data class
   data class DataExample(val id:Int,val text:String)
   
@@ -48,7 +48,7 @@ allprojects {
   ```
   
   4.Override the Interface In the class extending AbstractAdapterRecycleViewInterface
-  ```
+  ```kotlin
   //interface to assign data to views
     override fun assignUI(view: View, data: Any) {
     

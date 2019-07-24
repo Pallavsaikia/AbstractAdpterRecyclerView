@@ -53,7 +53,11 @@ allprojects {
     override fun assignUI(view: View, data: Any) {
         val stringSet=data as DataExample
         view.txtSet.text=stringSet.text
-
+	
+	//impletentation of recyclver view adapter onBindViewHolder()
+	//assign make changes to layout here
+	
+	
         //to set clickListener
         view.setOnClickListener {
             Toast.makeText(this,stringSet.text,Toast.LENGTH_SHORT).show()

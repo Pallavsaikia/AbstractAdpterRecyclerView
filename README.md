@@ -51,6 +51,8 @@ allprojects {
   ```
   //interface to assign data to views
     override fun assignUI(view: View, data: Any) {
+    
+    //cast the data into your data type
         val stringSet=data as DataExample
         view.txtSet.text=stringSet.text
 	

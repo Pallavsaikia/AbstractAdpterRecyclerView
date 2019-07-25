@@ -12,7 +12,7 @@ allprojects {
  
  ```groovy
   dependencies {
-	        implementation 'com.github.Pallavsaikia:AbstractAdpterRecyclerView:v1.0.0'
+	        implementation 'com.github.Pallavsaikia:AbstractAdpterRecyclerView:$tag'
 	}
   ```
   [![](https://jitpack.io/v/Pallavsaikia/AbstractAdpterRecyclerView.svg)](https://jitpack.io/#Pallavsaikia/AbstractAdpterRecyclerView)

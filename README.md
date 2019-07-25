@@ -15,7 +15,9 @@ allprojects {
 	        implementation 'com.github.Pallavsaikia:AbstractAdpterRecyclerView:v1.0.0'
 	}
   ```
-  
+  [![](https://jitpack.io/v/Pallavsaikia/AbstractAdpterRecyclerView.svg)](https://jitpack.io/#Pallavsaikia/AbstractAdpterRecyclerView)
+
+
   
   Usage
   

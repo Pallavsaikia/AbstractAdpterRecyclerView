@@ -7,7 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 
-class AbstractAdapterRecycleView(val context: Context, val data: MutableList<Any>, val layout: Int, val abstractAdapterRecycleViewInterface: AbstractAdapterRecycleViewInterface):
+class AbstractAdapterRecycleView(
+     val data: MutableList<Any>, val layout: Int, var abstractAdapterRecycleViewInterface: AbstractAdapterRecycleViewInterface?=null,
+     var addUi: ((View, Any) -> Unit?)? =null):
         RecyclerView.Adapter<AbstractAdapterRecycleView.MyViewHolder>(){
 
 
@@ -32,7 +34,10 @@ class AbstractAdapterRecycleView(val context: Context, val data: MutableList<Any
 
 
         fun setData(data: Any, pos : Int){
-            abstractAdapterRecycleViewInterface.assignUI(itemView,data)
+            abstractAdapterRecycleViewInterface?.assignUI(itemView,data)
+            if(addUi!=null) {
+                addUi!!(itemView,data)
+            }
 
         }
     }

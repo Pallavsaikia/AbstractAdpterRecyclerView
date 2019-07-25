@@ -39,11 +39,10 @@ allprojects {
   
   
   val dataList = listOf<DataExample>() //list of any type of your choice 
-  val adapter= AbstractAdapterRecycleView(
-            this,//context
-            dataList.toMutableList(),
-            R.layout.recycler_view_adapter,//layout
-            this//abstractAdapterRecycleViewInterface
+  val adapter = AbstractAdapterRecycleView(
+            dataStr.toMutableList(),
+            R.layout.recycler_view_adapter,
+            this
         )
   ```
   
@@ -65,4 +64,22 @@ allprojects {
             Toast.makeText(this,stringSet.text,Toast.LENGTH_SHORT).show()
         }
     }
+  ```
+  
+  
+  
+  You can also use it without using an interface by using a lambda
+  ```kotlin
+  val adapter = AbstractAdapterRecycleView(
+            dataStr.toMutableList(),
+            R.layout.recycler_view_adapter
+        ) { view, data ->
+
+            val stringSet = data as DataExample
+            view.txtSet.text = stringSet.text
+
+            view.setOnClickListener {
+                Toast.makeText(this, stringSet.text, Toast.LENGTH_SHORT).show()
+            }
+        }
   ```

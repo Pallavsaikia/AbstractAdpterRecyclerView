@@ -58,9 +58,7 @@ class MainActivity : AppCompatActivity(), AbstractAdapterRecycleViewInterface {
             val stringSet = data as DataExample
             view.txtSet.text = stringSet.text
 
-            view.setOnClickListener {
-                Toast.makeText(this, stringSet.text, Toast.LENGTH_SHORT).show()
-            }
+
         }
 
         recyclerView.adapter = adapter

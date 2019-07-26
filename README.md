@@ -85,3 +85,7 @@ allprojects {
             }
         }
   ```
+  
+  ## License & Copyright
+ 
+  Licensed under the [MIT License](LICENSE).

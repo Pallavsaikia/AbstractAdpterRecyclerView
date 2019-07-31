@@ -42,7 +42,7 @@ allprojects {
   
   val dataList = listOf<DataExample>() //list of any type of your choice 
   val adapter = AbstractAdapterRecycleView(
-            dataStr.toMutableList(),
+            dataList.toMutableList(),
             R.layout.recycler_view_adapter,
             this
         )

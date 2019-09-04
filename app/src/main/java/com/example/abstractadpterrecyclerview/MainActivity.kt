@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity(), AbstractAdapterRecycleViewInterface {
 
 
     //interface to assign data to views
-    override fun assignUI(view: View, data: Any) {
+    override fun assignUI(view: View, data: Any,position:Int) {
         val stringSet = data as DataExample
         view.txtSet.text = stringSet.text
 
@@ -53,11 +53,14 @@ class MainActivity : AppCompatActivity(), AbstractAdapterRecycleViewInterface {
         val adapter = AbstractAdapterRecycleView(
             dataStr.toMutableList(),
             R.layout.recycler_view_adapter
-        ) { view, data ->
+        ) { view, data,position ->
 
+            val pos=position//position of layout
             val stringSet = data as DataExample
             view.txtSet.text = stringSet.text
-
+            view.setOnClickListener {
+//                Toast.makeText(this,"${pos} + ${stringSet.text}",Toast.LENGTH_LONG).show()
+            }
 
         }
 

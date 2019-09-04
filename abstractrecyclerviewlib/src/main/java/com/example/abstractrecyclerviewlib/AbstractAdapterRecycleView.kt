@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 class AbstractAdapterRecycleView(
      val data: MutableList<Any>, val layout: Int, var abstractAdapterRecycleViewInterface: AbstractAdapterRecycleViewInterface?=null,
-     var addUi: ((View, Any) -> Unit)? =null):
+     var addUi: ((View, Any,Int) -> Unit)? =null):
         RecyclerView.Adapter<AbstractAdapterRecycleView.MyViewHolder>(){
 
 
@@ -34,9 +34,9 @@ class AbstractAdapterRecycleView(
 
 
         fun setData(data: Any, pos : Int){
-            abstractAdapterRecycleViewInterface?.assignUI(itemView,data)
+            abstractAdapterRecycleViewInterface?.assignUI(itemView,data,pos)
             if(addUi!=null) {
-                addUi!!(itemView,data)
+                addUi!!(itemView,data,pos)
             }
 
         }

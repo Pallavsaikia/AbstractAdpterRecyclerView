@@ -51,8 +51,8 @@ allprojects {
   4.Override the Interface In the class extending AbstractAdapterRecycleViewInterface
   ```kotlin
   //interface to assign data to views
-    override fun assignUI(view: View, data: Any) {
-    
+    override fun assignUI(view: View, data: Any,position:Int) {
+    //position is the position of layout in recycleview
     //cast the data into your data type
         val stringSet=data as DataExample
         view.txtSet.text=stringSet.text
@@ -63,7 +63,7 @@ allprojects {
 	
         //to set clickListener
         view.setOnClickListener {
-            Toast.makeText(this,stringSet.text,Toast.LENGTH_SHORT).show()
+            Toast.makeText(this,stringSet.text+position,Toast.LENGTH_SHORT).show()
         }
     }
   ```
@@ -75,13 +75,13 @@ allprojects {
   val adapter = AbstractAdapterRecycleView(
             dataStr.toMutableList(),
             R.layout.recycler_view_adapter
-        ) { view, data ->
-
+        ) { view, data ,position ->
+	    //position is the position of layout in recycleview
             val stringSet = data as DataExample
             view.txtSet.text = stringSet.text
 
             view.setOnClickListener {
-                Toast.makeText(this, stringSet.text, Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, stringSet.text+position, Toast.LENGTH_SHORT).show()
             }
         }
   ```
